@@ -106,7 +106,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (requestCode){
             case PERMISSIONS_REQUEST_CODE:
                 if(grantResults[0] == PackageManager.PERMISSION_GRANTED){
+
                     getContentsInfo(now);
+                }else{
+                    Toast.makeText(this,"権限がありません",Toast.LENGTH_SHORT).show();
                 }
                 break;
             default:
